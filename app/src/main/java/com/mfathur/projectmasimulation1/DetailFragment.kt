@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.mfathur.projectmasimulation1.databinding.FragmentDetailBinding
 
-class DetailFragment : Fragment() {
+class DetailFragment : Fragment(), View.OnClickListener {
 
     private var _binding: FragmentDetailBinding? = null
 
@@ -29,7 +29,13 @@ class DetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding?.btnBackToHomeScreen?.setOnClickListener(this)
+    }
 
+    override fun onClick(v: View?) {
+        when (v?.id) {
+            R.id.btn_back_to_home_screen -> activity?.onBackPressed()
+        }
     }
 
 }

@@ -11,6 +11,17 @@
         android:layout_height="wrap_content"
         android:padding="16dp">
 
+        <ImageButton
+            android:id="@+id/btn_back_to_home_screen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple_circle"
+            android:contentDescription="@string/back_to_home_screen"
+            android:padding="8dp"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <ImageView
             android:id="@+id/img_friend_user"
             android:layout_width="128dp"
@@ -40,7 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            app:layout_constraintBottom_toTopOf=""
+            app:layout_constraintBottom_toTopOf="@id/tv_origin_province"
             app:layout_constraintEnd_toEndOf="@id/tv_friend_name"
             app:layout_constraintStart_toStartOf="@id/tv_friend_name"
             app:layout_constraintTop_toBottomOf="@id/tv_friend_name"

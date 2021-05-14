@@ -6,10 +6,12 @@
     <string name="placeholder_password">Password</string>
     <string name="forgot_password">Forgot password?</string>
     <string name="login">Login</string>
-    <string name="don_t_have_an_account">Don't have an account?</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
     <string name="sign_up">Sign Up</string>
     <string name="cont_desc_friend_image">friend image</string>
     <string name="placeholder_name">Name</string>
     <string name="placeholder_birth_date">Birth Date</string>
     <string name="placeholder_origin">Origin</string>
+    <string name="back_to_login_screen">back to login screen</string>
+    <string name="back_to_home_screen">back to home screen</string>
 </resources>
