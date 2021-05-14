@@ -36,7 +36,7 @@ class SignUpFragment : Fragment(), View.OnClickListener {
     }
 
     private fun signUp() {
-
+        activity?.onBackPressed()
     }
 
 }

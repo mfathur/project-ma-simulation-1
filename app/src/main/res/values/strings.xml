@@ -12,6 +12,6 @@
     <string name="placeholder_name">Name</string>
     <string name="placeholder_birth_date">Birth Date</string>
     <string name="placeholder_origin">Origin</string>
-    <string name="back_to_login_screen">back to login screen</string>
     <string name="back_to_home_screen">back to home screen</string>
+    <string name="log_out">Log out</string>
 </resources>
