@@ -1,14 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DetailFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:padding="16dp">
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/img_friend_user"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:layout_marginTop="64dp"
+            android:contentDescription="@string/cont_desc_friend_image"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toTopOf="@id/tv_friend_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/tv_friend_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            app:layout_constraintBottom_toTopOf="@id/tv_friend_date_birth"
+            app:layout_constraintEnd_toEndOf="@id/img_friend_user"
+            app:layout_constraintStart_toStartOf="@id/img_friend_user"
+            app:layout_constraintTop_toBottomOf="@id/img_friend_user"
+            tools:text="@tools:sample/lorem" />
+
+        <TextView
+            android:id="@+id/tv_friend_date_birth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toTopOf=""
+            app:layout_constraintEnd_toEndOf="@id/tv_friend_name"
+            app:layout_constraintStart_toStartOf="@id/tv_friend_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_friend_name"
+            tools:text="@tools:sample/date/ddmmyy" />
+
+        <TextView
+            android:id="@+id/tv_origin_province"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/tv_friend_date_birth"
+            app:layout_constraintStart_toStartOf="@id/tv_friend_date_birth"
+            app:layout_constraintTop_toBottomOf="@id/tv_friend_date_birth"
+            tools:ellipsize="end"
+            tools:maxLines="4"
+            tools:text="@tools:sample/lorem/random" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
