@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "784759936341",
+    "project_id": "project-ma-simulation-1",
+    "storage_bucket": "project-ma-simulation-1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:784759936341:android:aff7e2a80b61b30df4cbdc",
+        "android_client_info": {
+          "package_name": "com.mfathur.projectmasimulation1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "784759936341-fjpaip5l4b45q85utb66qsrgl1no50ee.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMUJYXO_SaE-Epf7WCfFLWwgn4mMBgCWc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "784759936341-fjpaip5l4b45q85utb66qsrgl1no50ee.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
