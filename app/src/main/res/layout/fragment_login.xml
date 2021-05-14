@@ -47,13 +47,15 @@
             app:layout_constraintBottom_toTopOf="@id/tv_forgot_password"
             app:layout_constraintEnd_toEndOf="@id/tf_email"
             app:layout_constraintStart_toStartOf="@id/tf_email"
-            app:layout_constraintTop_toBottomOf="@id/tf_email">
+            app:layout_constraintTop_toBottomOf="@id/tf_email"
+            app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/placeholder_password" />
+                android:hint="@string/placeholder_password"
+                android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
