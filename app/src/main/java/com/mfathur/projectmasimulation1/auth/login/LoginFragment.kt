@@ -114,7 +114,7 @@ class LoginFragment : Fragment(), View.OnClickListener {
             navigateToHomeFragment()
             binding?.btnLogin?.isEnabled = true
         }.addOnFailureListener {
-            requireContext().showLongToastMessage(it.message.toString())
+            context?.showLongToastMessage(it.message.toString())
             binding?.btnLogin?.isEnabled = true
         }
     }

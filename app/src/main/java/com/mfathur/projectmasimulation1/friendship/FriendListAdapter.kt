@@ -7,8 +7,10 @@ import com.mfathur.projectmasimulation1.core.domain.Friend
 
 class FriendListAdapter : ListAdapter<Friend, FriendViewHolder>(FRIEND_COMPARATOR) {
 
+    var onItemClicked: ((Friend) -> Unit)? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FriendViewHolder {
-        return FriendViewHolder.create(parent)
+        return FriendViewHolder.create(parent, onItemClicked)
     }
 
     override fun onBindViewHolder(holder: FriendViewHolder, position: Int) {

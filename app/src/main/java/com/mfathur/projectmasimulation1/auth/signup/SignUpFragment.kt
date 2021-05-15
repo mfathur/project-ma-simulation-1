@@ -96,7 +96,7 @@ class SignUpFragment : Fragment(), View.OnClickListener {
             val action = SignUpFragmentDirections.actionSignUpFragmentToHomeFragment()
             findNavController().navigate(action)
         }.addOnFailureListener {
-            requireContext().showLongToastMessage(it.message.toString())
+            context?.showLongToastMessage(it.message.toString())
             binding?.btnSignUp?.isEnabled = true
         }
     }

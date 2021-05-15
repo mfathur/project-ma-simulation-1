@@ -24,4 +24,5 @@
     <string name="placeholder_phone_number">Phone Number</string>
     <string name="add_friend_photo">add friend photo</string>
     <string name="cont_desc_new_friend_photo">New friend photo</string>
+    <string name="cont_desc_add_new_friend">add new friend</string>
 </resources>

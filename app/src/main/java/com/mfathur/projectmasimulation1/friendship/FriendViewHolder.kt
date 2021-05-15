@@ -1,7 +1,6 @@
 package com.mfathur.projectmasimulation1.friendship
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -11,11 +10,12 @@ import com.mfathur.projectmasimulation1.R
 import com.mfathur.projectmasimulation1.core.domain.Friend
 import com.mfathur.projectmasimulation1.databinding.ItemFriendBinding
 
-class FriendViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class FriendViewHolder(
+    private val binding: ItemFriendBinding,
+    private val onItemFriendClicked: ((Friend) -> Unit)?
+) : RecyclerView.ViewHolder(binding.root) {
 
-    private val binding = ItemFriendBinding.bind(itemView)
-
-    private val requestOptions = RequestOptions().error(R.drawable.ic_baseline_broken_image_24)
+    private val requestOptions = RequestOptions().error(R.drawable.item_friend_img_placeholder)
         .placeholder(R.drawable.item_friend_img_placeholder)
 
     fun bind(item: Friend) {
@@ -25,14 +25,17 @@ class FriendViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
             tvFriendName.text = item.name
             tvFriendOrigin.text = item.origin
+
+            root.setOnClickListener { onItemFriendClicked?.invoke(item) }
         }
     }
 
     companion object {
-        fun create(parent: ViewGroup): FriendViewHolder {
+        fun create(parent: ViewGroup, onItemClicked: ((Friend) -> Unit)?): FriendViewHolder {
             val view =
                 LayoutInflater.from(parent.context).inflate(R.layout.item_friend, parent, false)
-            return FriendViewHolder(view)
+            val binding = ItemFriendBinding.bind(view)
+            return FriendViewHolder(binding, onItemClicked)
         }
     }
 
