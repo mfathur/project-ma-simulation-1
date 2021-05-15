@@ -2,7 +2,7 @@
     <string name="app_name">Project MA Simulation 1</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="placeholder_email">Email</string>
+    <string name="placeholder_email">Email Address</string>
     <string name="placeholder_password">Password</string>
     <string name="forgot_password">Forgot password?</string>
     <string name="login">Login</string>
@@ -19,4 +19,5 @@
     <string name="error_empty_password">Password cannot empty</string>
     <string name="error_insufficient_password">Password must contain at least 8 character</string>
     <string name="error_weak_password">Password must contain uppercase letter, lowercase letter and number digit</string>
+    <string name="already_have_an_account">Already have an account?</string>
 </resources>

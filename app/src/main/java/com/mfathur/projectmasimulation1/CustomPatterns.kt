@@ -2,7 +2,7 @@ package com.mfathur.projectmasimulation1
 
 import java.util.regex.Pattern
 
-object CustomPattern {
+object CustomPatterns {
 
     val PASSWORD_PATTERN: Pattern = Pattern.compile(
         "^" +

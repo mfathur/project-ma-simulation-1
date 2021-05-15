@@ -12,11 +12,6 @@ import com.mfathur.projectmasimulation1.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment(), View.OnClickListener {
 
-    companion object {
-        private const val EXTRA_EMAIL = "extra_email"
-        private const val EXTRA_PASSWORD = "extra_password"
-    }
-
     private lateinit var auth: FirebaseAuth
 
     private var _binding: FragmentLoginBinding? = null
@@ -58,7 +53,6 @@ class LoginFragment : Fragment(), View.OnClickListener {
                 val emailInput = binding?.etEmail?.text?.trim()
                 val passwordInput = binding?.etPassword?.text
                 if (validateEmailAndPasswordInput(emailInput, passwordInput)) {
-                    showLoadingState(true)
                     login(emailInput.toString(), passwordInput.toString())
                     binding?.btnLogin?.isEnabled = false
                 }
@@ -102,7 +96,7 @@ class LoginFragment : Fragment(), View.OnClickListener {
                 isValidated = false
             }
 
-            !CustomPattern.PASSWORD_PATTERN.matcher(passwordInput).matches() -> {
+            !CustomPatterns.PASSWORD_PATTERN.matcher(passwordInput).matches() -> {
                 binding?.etPassword?.error = getString(R.string.error_weak_password)
                 isValidated = false
             }
@@ -115,28 +109,15 @@ class LoginFragment : Fragment(), View.OnClickListener {
         auth.signInWithEmailAndPassword(email, password).addOnSuccessListener {
             navigateToHomeFragment()
             binding?.btnLogin?.isEnabled = true
-            showLoadingState(false)
         }.addOnFailureListener {
-            requireContext().showLongToastMessage("Login Failed")
+            requireContext().showLongToastMessage(it.message.toString())
             binding?.btnLogin?.isEnabled = true
-            showLoadingState(false)
         }
-
-
     }
 
     private fun navigateToHomeFragment() {
         val action = LoginFragmentDirections.actionLoginFragmentToHomeFragment()
         findNavController().navigate(action)
     }
-
-    private fun showLoadingState(state: Boolean) {
-        if (state) {
-            binding?.progressBar?.visibility = View.VISIBLE
-        } else {
-            binding?.progressBar?.visibility = View.GONE
-        }
-    }
-
 
 }
