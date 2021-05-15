@@ -1,4 +1,4 @@
-package com.mfathur.projectmasimulation1
+package com.mfathur.projectmasimulation1.friendship.home
 
 import android.os.Bundle
 import android.view.*
@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
+import com.mfathur.projectmasimulation1.R
 import com.mfathur.projectmasimulation1.databinding.FragmentHomeBinding
+import com.mfathur.projectmasimulation1.friendship.FriendListAdapter
 
 
 class HomeFragment : Fragment() {

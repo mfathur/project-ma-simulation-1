@@ -1,15 +1,15 @@
-package com.mfathur.projectmasimulation1
+package com.mfathur.projectmasimulation1.friendship.addfriend
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.mfathur.projectmasimulation1.databinding.FragmentDetailBinding
+import com.mfathur.projectmasimulation1.databinding.FragmentAddFriendBinding
 
-class DetailFragment : Fragment(), View.OnClickListener {
+class AddFriendFragment : Fragment() {
 
-    private var _binding: FragmentDetailBinding? = null
+    private var _binding: FragmentAddFriendBinding? = null
 
     private val binding
         get() = _binding
@@ -18,7 +18,7 @@ class DetailFragment : Fragment(), View.OnClickListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentDetailBinding.inflate(inflater, container, false)
+        _binding = FragmentAddFriendBinding.inflate(inflater, container, false)
         return binding?.root
     }
 
@@ -29,13 +29,5 @@ class DetailFragment : Fragment(), View.OnClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding?.btnBackToHomeScreen?.setOnClickListener(this)
     }
-
-    override fun onClick(v: View?) {
-        when (v?.id) {
-            R.id.btn_back_to_home_screen -> activity?.onBackPressed()
-        }
-    }
-
 }

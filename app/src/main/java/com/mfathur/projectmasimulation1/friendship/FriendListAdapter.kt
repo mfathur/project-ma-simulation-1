@@ -1,8 +1,9 @@
-package com.mfathur.projectmasimulation1
+package com.mfathur.projectmasimulation1.friendship
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
+import com.mfathur.projectmasimulation1.core.domain.Friend
 
 class FriendListAdapter : ListAdapter<Friend, FriendViewHolder>(FRIEND_COMPARATOR) {
 

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.mfathur.projectmasimulation1.LoginFragment"
+        android:name="com.mfathur.projectmasimulation1.auth.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.mfathur.projectmasimulation1.HomeFragment"
+        android:name="com.mfathur.projectmasimulation1.friendship.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -37,7 +37,7 @@
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.mfathur.projectmasimulation1.SignUpFragment"
+        android:name="com.mfathur.projectmasimulation1.auth.signup.SignUpFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" >
         <action
@@ -46,7 +46,7 @@
     </fragment>
     <fragment
         android:id="@+id/addDataFragment"
-        android:name="com.mfathur.projectmasimulation1.AddFriendFragment"
+        android:name="com.mfathur.projectmasimulation1.friendship.addfriend.AddFriendFragment"
         android:label="fragment_add_data"
         tools:layout="@layout/fragment_add_friend" >
         <action
@@ -55,7 +55,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.mfathur.projectmasimulation1.DetailFragment"
+        android:name="com.mfathur.projectmasimulation1.friendship.detail.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail" />
 </navigation>

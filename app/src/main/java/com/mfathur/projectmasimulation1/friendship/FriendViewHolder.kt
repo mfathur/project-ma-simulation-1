@@ -1,4 +1,4 @@
-package com.mfathur.projectmasimulation1
+package com.mfathur.projectmasimulation1.friendship
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.bumptech.glide.request.RequestOptions
+import com.mfathur.projectmasimulation1.R
+import com.mfathur.projectmasimulation1.core.domain.Friend
 import com.mfathur.projectmasimulation1.databinding.ItemFriendBinding
 
 class FriendViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

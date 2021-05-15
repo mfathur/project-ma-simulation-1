@@ -1,4 +1,4 @@
-package com.mfathur.projectmasimulation1
+package com.mfathur.projectmasimulation1.auth.signup
 
 import android.os.Bundle
 import android.util.Patterns
@@ -8,6 +8,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
+import com.mfathur.projectmasimulation1.R
+import com.mfathur.projectmasimulation1.core.util.CustomPatterns
+import com.mfathur.projectmasimulation1.core.util.showLongToastMessage
 import com.mfathur.projectmasimulation1.databinding.FragmentSignUpBinding
 
 class SignUpFragment : Fragment(), View.OnClickListener {

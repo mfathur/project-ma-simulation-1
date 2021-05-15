@@ -1,4 +1,4 @@
-package com.mfathur.projectmasimulation1
+package com.mfathur.projectmasimulation1.core.domain
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

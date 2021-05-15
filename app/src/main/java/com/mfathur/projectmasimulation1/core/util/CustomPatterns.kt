@@ -1,4 +1,4 @@
-package com.mfathur.projectmasimulation1
+package com.mfathur.projectmasimulation1.core.util
 
 import java.util.regex.Pattern
 

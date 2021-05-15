@@ -1,4 +1,4 @@
-package com.mfathur.projectmasimulation1
+package com.mfathur.projectmasimulation1.core.util
 
 import android.content.Context
 import android.widget.Toast
