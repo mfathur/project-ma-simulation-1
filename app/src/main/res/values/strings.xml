@@ -14,4 +14,9 @@
     <string name="placeholder_origin">Origin</string>
     <string name="back_to_home_screen">back to home screen</string>
     <string name="log_out">Log out</string>
+    <string name="error_empty_email">Email address cannot empty</string>
+    <string name="error_invalid_email">Invalid email address</string>
+    <string name="error_empty_password">Password cannot empty</string>
+    <string name="error_insufficient_password">Password must contain at least 8 character</string>
+    <string name="error_weak_password">Password must contain uppercase letter, lowercase letter and number digit</string>
 </resources>

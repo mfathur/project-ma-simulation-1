@@ -4,10 +4,14 @@ import android.os.Bundle
 import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.google.firebase.auth.FirebaseAuth
 import com.mfathur.projectmasimulation1.databinding.FragmentHomeBinding
 
 
 class HomeFragment : Fragment() {
+
+    private lateinit var auth: FirebaseAuth
 
     private var _binding: FragmentHomeBinding? = null
 
@@ -30,6 +34,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        auth = FirebaseAuth.getInstance()
         if (activity is AppCompatActivity) {
             (activity as AppCompatActivity).setSupportActionBar(binding?.toolbar)
         }
@@ -44,7 +49,9 @@ class HomeFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_logout -> {
-                activity?.onBackPressed()
+                auth.signOut()
+                val action = HomeFragmentDirections.actionHomeFragmentToLoginFragment()
+                findNavController().navigate(action)
                 true
             }
             else -> super.onOptionsItemSelected(item)

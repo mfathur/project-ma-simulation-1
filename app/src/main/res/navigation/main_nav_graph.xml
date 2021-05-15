@@ -28,6 +28,12 @@
         <action
             android:id="@+id/action_homeFragment_to_addDataFragment"
             app:destination="@id/addDataFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
