@@ -42,6 +42,7 @@ class DetailFragment : Fragment(), View.OnClickListener {
 
         binding?.imgFriendUser?.let {
             Glide.with(view).setDefaultRequestOptions(requestOptions).load(args.friend?.photoUrl)
+                .circleCrop()
                 .into(it)
         }
 

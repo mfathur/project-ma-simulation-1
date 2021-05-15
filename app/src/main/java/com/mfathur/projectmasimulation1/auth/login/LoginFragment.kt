@@ -1,6 +1,7 @@
 package com.mfathur.projectmasimulation1.auth.login
 
 import android.os.Bundle
+import android.util.Log
 import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
@@ -110,12 +111,17 @@ class LoginFragment : Fragment(), View.OnClickListener {
     }
 
     private fun login(email: String, password: String) {
-        auth.signInWithEmailAndPassword(email, password).addOnSuccessListener {
-            navigateToHomeFragment()
-            binding?.btnLogin?.isEnabled = true
-        }.addOnFailureListener {
-            context?.showLongToastMessage(it.message.toString())
-            binding?.btnLogin?.isEnabled = true
+        try {
+            auth.signInWithEmailAndPassword(email, password).addOnSuccessListener {
+                navigateToHomeFragment()
+                binding?.btnLogin?.isEnabled = true
+            }.addOnFailureListener {
+                context?.showLongToastMessage(it.message.toString())
+                binding?.btnLogin?.isEnabled = true
+            }
+        } catch (e: Exception){
+            context?.showLongToastMessage(getString(R.string.error_login_failed))
+            Log.e("login", e.message.toString())
         }
     }
 

@@ -12,7 +12,6 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.mfathur.projectmasimulation1.R
 import com.mfathur.projectmasimulation1.core.domain.Friend
 import com.mfathur.projectmasimulation1.core.util.showLongToastMessage
-import com.mfathur.projectmasimulation1.core.util.showShortToastMessage
 import com.mfathur.projectmasimulation1.databinding.FragmentHomeBinding
 import com.mfathur.projectmasimulation1.friendship.FriendListAdapter
 
@@ -77,28 +76,31 @@ class HomeFragment : Fragment(), View.OnClickListener {
     private fun observeFriendData() {
         val list = ArrayList<Friend>()
         val fireStore = FirebaseFirestore.getInstance()
-        fireStore.collection("users").document(auth.currentUser!!.uid).collection("friends")
-            .addSnapshotListener { querySnapshot, error ->
-                if (querySnapshot != null) {
-                    for (item in querySnapshot) {
-                        list.add(
-                            Friend(
-                                id = item.id,
-                                photoUrl = item.getString("photo_url") ?: "",
-                                name = item.getString("name") ?: "",
-                                phoneNumber = item.getString("phone_number") ?: "",
-                                origin = item.getString("origin") ?: ""
+        try {
+            fireStore.collection("users").document(auth.currentUser!!.uid).collection("friends")
+                .addSnapshotListener { querySnapshot, error ->
+                    if (querySnapshot != null) {
+                        for (item in querySnapshot) {
+                            list.add(
+                                Friend(
+                                    id = item.id,
+                                    photoUrl = item.getString("photo_url") ?: "",
+                                    name = item.getString("name") ?: "",
+                                    phoneNumber = item.getString("phone_number") ?: "",
+                                    origin = item.getString("origin") ?: ""
+                                )
                             )
-                        )
+                        }
+                        adapter.submitList(list)
                     }
-                    adapter.submitList(list)
-                }
 
-                if (error != null) {
-                    context?.showLongToastMessage(error.message.toString())
+                    if (error != null) {
+                        context?.showLongToastMessage(error.message.toString())
+                    }
                 }
-            }
-
+        }  catch (e:Exception){
+            context?.showLongToastMessage(e.message.toString())
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

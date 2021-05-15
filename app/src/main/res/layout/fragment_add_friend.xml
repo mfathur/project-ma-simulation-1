@@ -10,11 +10,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <ImageButton
+            android:id="@+id/btn_back_to_home_screen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/ripple_circle"
+            android:contentDescription="@string/back_to_home_screen"
+            android:padding="8dp"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <ImageView
             android:id="@+id/img_new_friend"
             android:layout_width="128dp"
             android:layout_height="128dp"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="64dp"
             android:contentDescription="@string/cont_desc_new_friend_photo"
             android:src="@drawable/item_friend_img_placeholder"
             android:text="@string/add_friend"
@@ -22,13 +35,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageButton
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:background="@drawable/item_friend_img_placeholder"
-            android:backgroundTint="?attr/colorPrimary"
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_add_new_friend_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:contentDescription="@string/add_friend_photo"
             android:src="@drawable/ic_baseline_photo_camera_24"
+            app:fabSize="mini"
             app:layout_constraintBottom_toBottomOf="@id/img_new_friend"
             app:layout_constraintEnd_toEndOf="@id/img_new_friend"
             app:layout_constraintTop_toTopOf="@id/img_new_friend"
@@ -93,6 +106,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
+            android:id="@+id/btn_add_new_friend"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"

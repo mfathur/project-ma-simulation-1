@@ -1,6 +1,7 @@
 package com.mfathur.projectmasimulation1.auth.signup
 
 import android.os.Bundle
+import android.util.Log
 import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
@@ -91,13 +92,18 @@ class SignUpFragment : Fragment(), View.OnClickListener {
     }
 
     private fun signUp(email: String, password: String) {
-        auth.createUserWithEmailAndPassword(email, password).addOnSuccessListener {
-            binding?.btnSignUp?.isEnabled = true
-            val action = SignUpFragmentDirections.actionSignUpFragmentToHomeFragment()
-            findNavController().navigate(action)
-        }.addOnFailureListener {
-            context?.showLongToastMessage(it.message.toString())
-            binding?.btnSignUp?.isEnabled = true
+        try {
+            auth.createUserWithEmailAndPassword(email, password).addOnSuccessListener {
+                binding?.btnSignUp?.isEnabled = true
+                val action = SignUpFragmentDirections.actionSignUpFragmentToHomeFragment()
+                findNavController().navigate(action)
+            }.addOnFailureListener {
+                context?.showLongToastMessage(it.message.toString())
+                binding?.btnSignUp?.isEnabled = true
+            }
+        } catch (e: Exception) {
+            context?.showLongToastMessage(getString(R.string.error_sign_up_failed))
+            Log.e("signUp", e.message.toString())
         }
     }
 
