@@ -5,11 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.mfathur.projectmasimulation1.databinding.FragmentAddDataBinding
+import com.mfathur.projectmasimulation1.databinding.FragmentAddFriendBinding
 
-class AddDataFragment : Fragment() {
+class AddFriendFragment : Fragment() {
 
-    private var _binding: FragmentAddDataBinding? = null
+    private var _binding: FragmentAddFriendBinding? = null
 
     private val binding
         get() = _binding
@@ -18,7 +18,7 @@ class AddDataFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentAddDataBinding.inflate(inflater, container, false)
+        _binding = FragmentAddFriendBinding.inflate(inflater, container, false)
         return binding?.root
     }
 

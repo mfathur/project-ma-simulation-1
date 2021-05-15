@@ -12,6 +12,7 @@ import com.mfathur.projectmasimulation1.databinding.FragmentHomeBinding
 class HomeFragment : Fragment() {
 
     private lateinit var auth: FirebaseAuth
+    private lateinit var adapter: FriendListAdapter
 
     private var _binding: FragmentHomeBinding? = null
 
@@ -38,6 +39,8 @@ class HomeFragment : Fragment() {
         if (activity is AppCompatActivity) {
             (activity as AppCompatActivity).setSupportActionBar(binding?.toolbar)
         }
+
+        adapter = FriendListAdapter()
 
     }
 

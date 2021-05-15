@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddFriendFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/img_new_friend"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:layout_marginTop="48dp"
+            android:contentDescription="@string/cont_desc_new_friend_photo"
+            android:src="@drawable/item_friend_img_placeholder"
+            android:text="@string/add_friend"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/item_friend_img_placeholder"
+            android:backgroundTint="?attr/colorPrimary"
+            android:contentDescription="@string/add_friend_photo"
+            android:src="@drawable/ic_baseline_photo_camera_24"
+            app:layout_constraintBottom_toBottomOf="@id/img_new_friend"
+            app:layout_constraintEnd_toEndOf="@id/img_new_friend"
+            app:layout_constraintTop_toTopOf="@id/img_new_friend"
+            app:layout_constraintVertical_bias="1"
+            app:tint="@color/white" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tf_friend_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="64dp"
+            app:layout_constraintEnd_toEndOf="@id/img_new_friend"
+            app:layout_constraintStart_toStartOf="@id/img_new_friend"
+            app:layout_constraintTop_toBottomOf="@id/img_new_friend">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_friend_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/placeholder_name"
+                android:inputType="textPersonName" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tf_friend_phone_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="@id/tf_friend_name"
+            app:layout_constraintStart_toStartOf="@id/tf_friend_name"
+            app:layout_constraintTop_toBottomOf="@id/tf_friend_name">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_friend_phone_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/placeholder_phone_number"
+                android:inputType="phone" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tf_friend_origin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="@id/tf_friend_phone_number"
+            app:layout_constraintStart_toStartOf="@id/tf_friend_phone_number"
+            app:layout_constraintTop_toBottomOf="@id/tf_friend_phone_number">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_friend_origin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/placeholder_origin"
+                android:inputType="textPersonName" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/add_friend"
+            app:layout_constraintTop_toBottomOf="@id/tf_friend_origin" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

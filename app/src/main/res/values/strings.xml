@@ -20,4 +20,8 @@
     <string name="error_insufficient_password">Password must contain at least 8 character</string>
     <string name="error_weak_password">Password must contain uppercase letter, lowercase letter and number digit</string>
     <string name="already_have_an_account">Already have an account?</string>
+    <string name="add_friend">Add Friend</string>
+    <string name="placeholder_phone_number">Phone Number</string>
+    <string name="add_friend_photo">add friend photo</string>
+    <string name="cont_desc_new_friend_photo">New friend photo</string>
 </resources>
